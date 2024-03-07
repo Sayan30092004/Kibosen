@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Website Landing Page With Background Video Slider | Travel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+   </head>
+
+    <body>
+        <header>
+            <div class="brand">
+                <div class="logo"><img src="assets/logo-1.png" alt=""></div>
+                <div class="brand-name">Kibōsen</div></div>
+            <div class="menu-btn"></div>
+            <div class="navigation">
+                <div class="navigation-items">
+                    <a href="home.html">Explore the Webpage</a>
+                    <!--<a href="home.html">Home</a>
+                    <a href="home.html">About</a>
+                    <a href="home.html">Explore</a>
+                    <a href="home.html">Gallary</a>
+                    <a href="home.html">Contact</a>-->
+                </div>
+            </div>
+        </header>
+
+        <section class="home">
+
+            <video class="video-slide active" src="assets/bg-1.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="assets/bg-2.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="assets/bg-3.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="assets/bg-4.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="assets/bg-5.mp4" autoplay muted loop></video>
+            <video class="video-slide" src="assets/bg-6.mp4" autoplay muted loop></video>
+
+
+            <div class="content active">
+                <h1>Indulge in.<br><span>Paradise</span></h1>
+                <p>Discover unparalleled luxury. Indulge in breathtaking views, pristine beaches, and personalized service. From private villas to exclusive resorts, elevate your escape with opulent amenities and unparalleled relaxation. Experience the epitome of island elegance and create unforgettable memories in a paradise crafted just for you. Book your dream getaway today!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Alpine.<br><span>Odyssey</span></h1>
+                <p>Get ready for an exhilarating snowy mountain adventure! Dive into a world of breathtaking vistas, adrenaline-pumping slopes, and unforgettable experiences. Whether you're skiing, snowboarding, or simply taking in the stunning scenery, our snowy mountain retreat promises thrills at every turn. Book now and make memories that last a lifetime!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Ascend to.<br><span>Adventure</span></h1>
+                <p>Experience the thrill of soaring above in boundless skies! Embark on unforgettable adventures where the horizon is your only limit. Whether it's a tranquil sunrise or a breathtaking sunset, our skybound escapes promise awe-inspiring moments and memories that reach new heights. Book your adventure and let your spirit soar!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Wanderlust.<br><span>Wheels</span></h1>
+                <p>Seeking thrills and excitement? Dive into endless adventures with our road trip packages! Explore stunning landscapes, conquer new challenges, and embrace the freedom of the open road. Whether it's hiking, camping, or discovering hidden treasures, let us fuel your passion for adventure. Start your journey today!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Aerial.<br><span>Alpine Thrills</span></h1>
+                <p>Experience the ultimate adrenaline rush with our paragliding adventures in the majestic mountains! Glide through the skies, taking in breathtaking vistas and feeling the exhilaration of flight. Whether you're a seasoned pro or new to the sport, our expert guides ensure a safe and unforgettable experience. Book your adventure today!</p>
+                <a href="#">Read More</a>
+            </div>
+
+            <div class="content">
+                <h1>Above.<br><span>and Beyond</span></h1>
+                <p>Experience the ultimate fusion of adventure and serenity with our hot air balloon and camping excursions! Drift into the clouds by day, then settle into a cozy campsite under the stars by night. Discover the magic of nature from above and below. Book your unforgettable adventure today!</p>
+                <a href="#">Read More</a>
+            </div>
+
+
+            <div class="media-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+
+
+            </div>
+            <div class="slider-navigation">
+                <div class="nav-btn active"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            const menuBtn = document.querySelector(".menu-btn");
+            const navigation = document.querySelector(".navigation");
+
+
+            menuBtn.addEventListener("click", () => {
+                menuBtn.classList.toggle("active");
+                navigation.classList.toggle("active");
+            });
+
+            const btns = document.querySelectorAll(".nav-btn");
+            const slides = document.querySelectorAll(".video-slide");
+            const contents = document.querySelectorAll(".content");
+
+
+
+            var sliderNav = function(manual){
+                btns.forEach((btn) => {
+                    btn.classList.remove("active");
+                });
+
+                slides.forEach((slide) => {
+                    slide.classList.remove("active");
+                });
+
+                contents.forEach((content) => {
+                    content.classList.remove("active");
+                });
+                
+                btns[manual].classList.add("active");
+                slides[manual].classList.add("active");
+                contents[manual].classList.add("active");
+
+
+            }
+            btns.forEach((btn, i) => {
+                btn.addEventListener("click", () => {
+                    sliderNav(i);
+                });
+            });
+        </script>
+    </body>
+
+</html>
